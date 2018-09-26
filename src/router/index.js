@@ -1,12 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+// TODO: remove after that
+import { Button } from '../components/atoms/buttons'
+
 const Dashboard = () => (
     <div>dashboard</div>
 )
 
 const Route2 = () => (
-    <div>home</div>
+    <Button>home</Button>
 )
 
 const AppRouter = () => (
