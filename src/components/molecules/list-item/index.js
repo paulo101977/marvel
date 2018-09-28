@@ -8,8 +8,16 @@ import {
     ButtonAlert
 } from '../../atoms/buttons';
 
-const ListItemWrapper = Row.extend`
+import {
+    ImgMini
+} from '../../atoms/img';
 
+const ListItemWrapper = Row.extend`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* TODO: change the color to variable */
+    background: cadetblue;
 `;
 
 class ListItem extends React.Component {
@@ -34,12 +42,15 @@ class ListItem extends React.Component {
 
         const {
             editText ,
-            seeText
+            seeText,
+            src,
+            alt
         } = this.props;
 
         return (
             <ListItemWrapper>
                 <Col>
+                    <ImgMini src={src} alt={alt} title={alt} />
                 </Col>
                 <Col>
                     <ButtonPrimary
