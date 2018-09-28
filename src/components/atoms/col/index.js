@@ -1,13 +1,11 @@
 import React from  'react';
 import styled from  'styled-components';
 
-const Col12 = styled.div.attrs({className: 'col-md-12'})`
-    ${props => `color: ${props.theme.main}`}
-`;
+const Col = styled.div.attrs({className: 'col'})``;
 
-const Col6 = styled.div.attrs({className: 'col-md-6'})`
-    ${props => `color: ${props.theme.main}`}
-`;
+const Col12 = Col.extend.attrs({className: 'col-md-12'})``;
 
-export default Col12;
-export { Col12, Col6 };
+const Col6 = Col.extend.attrs({className: 'col-md-6'})``;
+
+export default Col;
+export { Col, Col12, Col6 };
