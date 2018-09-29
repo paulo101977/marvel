@@ -67,8 +67,6 @@ class Card extends React.Component {
         let name = title;
         let extension = "";
 
-        console.log(item.toJS())
-
         if(item && typeof item === 'object'){
             extension = item.get("thumbnail").get("extension");
             url = `${ item.get("thumbnail").get("path") }.${extension}`;

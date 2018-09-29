@@ -24,14 +24,18 @@ class HomePage extends React.Component {
     }
 
     filterText(text) {
+        this.loadDataOrSearch(text);
+    }
 
+    loadDataOrSearch(text) {
+        const { loadData } = this.props;
+        if(loadData){
+            loadData(text);
+        }
     }
 
     componentDidMount() {
-        const { loadData } = this.props;
-        if(loadData){
-            loadData();
-        }
+       this.loadDataOrSearch();
     }
 
     render(){

@@ -4,11 +4,13 @@ export const GET_DATA_SUCCESS = Symbol('GET_DATA_SUCCESS')
 export const GET_DATA_FAIL = Symbol('GET_DATA_FAIL')
 
 
-export function loadData(){
+export function loadData(charName){
   return (dispatch, getState) => {
     //const Data = getState().Data
 
-    const url = 'characters'
+    let toSearch = charName || '';
+
+    const url = charName ? `characters?name=${charName}` : `characters?`
 
     return dispatch({
       [CHAIN_API]: [
