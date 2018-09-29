@@ -23,6 +23,7 @@ const LabelWrapper = Label.extend`
         background-color: white;
         -webkit-transition: .4s;
         transition: .4s;
+        border: 2px solid ${ props => props.theme && props.theme.toggle ? props.theme.toggle.dark : '#2196F3' };
         border-radius: 34px;
     }
 
@@ -31,8 +32,8 @@ const LabelWrapper = Label.extend`
         content: "";
         height: 26px;
         width: 26px;
-        left: 4px;
-        bottom: 4px;
+        left: 2px;
+        bottom: 2px;
         background-color: ${ props => props.theme && props.theme.toggle ? props.theme.toggle.dark : '#2196F3' };
         -webkit-transition: .4s;
         transition: .4s;
@@ -44,8 +45,6 @@ const LabelWrapper = Label.extend`
     }
 
     input:checked + .slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
         transform: translateX(26px);
         border-radius: 100%;
     }
@@ -57,7 +56,7 @@ const Toggle = props => {
     return (
         <LabelWrapper>
             <Input type="checkbox" />
-            <Span class="slider"></Span>
+            <Span className="slider"></Span>
         </LabelWrapper>
     )
 }

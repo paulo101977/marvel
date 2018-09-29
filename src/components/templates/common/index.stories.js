@@ -9,6 +9,8 @@ import theme from '../../../stylus/light';
 
 import ListItem from '../../molecules/list-item';
 
+import ItemsContainer from '../../organisms/items-container';
+
 const headerConfig = {
   headerTitle: 'Mytitle',
   idComp: 1,
@@ -25,6 +27,16 @@ const itemConfig = {
   editText:"Edit",
   seeText:"View"
 }
+
+const items = [];
+
+const allItems = () => { 
+  for(let x = 0; x < 10; x++){
+    items.push(itemConfig)
+  }
+
+  return items;
+};
 
 storiesOf('Templates/Common', module)
   .add('without content', () => (
@@ -45,4 +57,12 @@ storiesOf('Templates/Common', module)
         <ListItem { ...itemConfig }/>
       </Template>
     </ThemeProvider>
+  )).add('with items container', () => (
+    <ThemeProvider theme={theme}>
+      <Template {...headerConfig}>
+        <ItemsContainer itemsList={ allItems() } />
+      </Template>
+    </ThemeProvider>
   ));
+
+  //ItemsContainer

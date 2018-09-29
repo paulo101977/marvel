@@ -16,13 +16,17 @@ const ListItemWrapper = Row.extend`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: ${ props => props.theme ? props.theme.background.listItem : ''} !important;
+    background: white;
+    border: solid 1px ${ props => props.theme ? props.theme.background.listItem : ''} !important;
+    border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     min-height: 90px;
+    margin-bottom: 10px;
 
     :hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.4);
+        transform: translateX(10px);
     }
 
     .btn-container{
