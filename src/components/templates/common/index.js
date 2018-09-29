@@ -6,8 +6,8 @@ import { ContainerFluid, Container } from '../../atoms/container';
 import { Header } from '../../organisms/header';
 
 const ContainerFluidWrapper = ContainerFluid.extend`
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
     min-height: 100vh;
 `
 

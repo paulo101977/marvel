@@ -27,7 +27,7 @@ function extractParams(callApi) {
     afterError
   } = callApi;
   
-  const url = `${config.get('API_BASE')}${path}`;
+  const url = `${config.get('API_BASE')}${path}${config.get('KEY')}`;
 
 
   return {

@@ -1,24 +1,23 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-// TODO: remove after that
-import { Button } from '../components/atoms/buttons'
 
-const Dashboard = () => (
-    <div>dashboard</div>
-)
+import HomePage from '../components/pages/home';
+import { ThemeProvider } from 'styled-components';
+import theme from '../stylus/light';
 
-const Route2 = () => (
-    <Button>home</Button>
-)
 
 const AppRouter = () => (
-  <BrowserRouter>
-    <Switch>
-        <Route path="/" exact component={Dashboard}/>
-        <Route path="/home" exact component={Route2}/>
-    </Switch>
-  </BrowserRouter>
+  <ThemeProvider theme={theme}>
+    <BrowserRouter>
+        <Switch>
+            <Route path="/" exact component={ HomePage }/>
+            { 
+                // <Route path="/detail" exact component={Route2}/> 
+            }
+        </Switch>
+    </BrowserRouter>
+  </ThemeProvider>
 )
 
 export default AppRouter;

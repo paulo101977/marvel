@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-import styled from 'styled-components';
+import * as LoadData from '../../../actions/LoadData';
 
 import TemplateCommon from '../../templates/common';
 import ItemsContainer from '../../organisms/items-container';
@@ -9,9 +11,8 @@ const headerConfig = {
     headerTitle: 'Home',
     idComp: 1,
     labelText: '',
-    placeholder: 'Filter by a Hero Name',
+    placeholder: 'Find by a Hero Name',
     buttonText: 'Search',
-    filterText: 'filter',
     isLine: true,
     hasSearch: true
 }
@@ -20,30 +21,24 @@ class HomePage extends React.Component {
 
     constructor(props){
         super(props);
-
-        this.state = {
-            data: null
-        }
     }
 
-    loadData() {
-
-    }
-
-    filterData() {
+    filterText(text) {
 
     }
 
     componentDidMount() {
-        this.loadData();
+        const { loadData } = this.props;
+        if(loadData){
+            loadData();
+        }
     }
 
     render(){
-        // below this.props is to storybook usage
-        const data  = this.state.data || this.props.data;
+        const { data }  = this.props;
 
         return ( 
-            <TemplateCommon {...headerConfig}>
+            <TemplateCommon {...headerConfig} filterText={ (text)=> this.filterText(text) }>
               <ItemsContainer itemsList={ data }/>
             </TemplateCommon>
         )
@@ -51,5 +46,24 @@ class HomePage extends React.Component {
 
 };
 
-export default HomePage;
+function mapStateToProps (state) {
+    const response = state.LoadData.get('response')
+
+    // data from immutable (immutable way)
+    const data = response.get("data").get("results");
+
+    return {
+        data
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(
+        LoadData,
+        dispatch
+    )
+}
+
+  
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
 export { HomePage };

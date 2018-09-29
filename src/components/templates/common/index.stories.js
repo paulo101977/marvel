@@ -7,7 +7,7 @@ import Template from '.';
 
 import theme from '../../../stylus/light';
 
-import ListItem from '../../molecules/list-item';
+import Card from '../../molecules/card';
 
 import ItemsContainer from '../../organisms/items-container';
 
@@ -54,7 +54,7 @@ storiesOf('Templates/Common', module)
   )).add('with simple complex content', () => (
     <ThemeProvider theme={theme}>
       <Template {...headerConfig}>
-        <ListItem { ...itemConfig }/>
+        <Card { ...itemConfig }/>
       </Template>
     </ThemeProvider>
   )).add('with items container', () => (

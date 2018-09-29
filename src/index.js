@@ -9,20 +9,12 @@ import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './stylus/global-styles'
 
-import { ThemeProvider  } from 'styled-components';
-
-// TODO: remove this after
-const theme = {
-    main: "blue"
-};
 
 const store = configureStore();
 
 ReactDOM.render(
-    <ThemeProvider theme={theme}>
-        <Provider store={ store }>
-            <AppRouter />
-        </Provider>
-    </ThemeProvider>, document.getElementById('root')
+    <Provider store={ store }>
+        <AppRouter />
+    </Provider>, document.getElementById('root')
 );
 registerServiceWorker();
