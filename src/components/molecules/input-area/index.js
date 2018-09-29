@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Label from '../../atoms/label';
 import FormGroup from '../../atoms/form-group';
 import Input from '../../atoms/input';
-import { ButtonPrimary } from '../../atoms/buttons';
+import { ButtonSecondary } from '../../atoms/buttons';
 
 const InputAreaWrapper = FormGroup.extend`
     display: flex;
@@ -62,7 +62,10 @@ class InputArea extends React.Component {
                     onChange={ (event) => this.textChanged(event)}
                     id={ idComp } 
                     placeholder={ placeholder }/>
-                <ButtonPrimary onClick={ () => this.submit() } >{ buttonText }</ButtonPrimary>
+                <ButtonSecondary 
+                    onClick={ () => this.submit() } >
+                    { buttonText }
+                </ButtonSecondary>
             </InputAreaWrapper>
         )
     }

@@ -7,6 +7,7 @@ import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './stylus/global-styles'
 
 import { ThemeProvider  } from 'styled-components';
 

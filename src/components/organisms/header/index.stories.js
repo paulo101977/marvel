@@ -16,11 +16,20 @@ storiesOf('Organisms/Header', module)
     <ThemeProvider theme={theme}>
       <Header 
         isLine
+        headerTitle="Title"
+        hasSearch={ true }
         idComp="12"
         labelText=""
         placeholder="My placeholder"
         buttonText="search"
         filterText={(value) => filterText(value)}
+        />
+    </ThemeProvider>
+  )).add('without search bar', () => (
+    <ThemeProvider theme={theme}>
+      <Header 
+        isLine
+        headerTitle="Title"
         />
     </ThemeProvider>
   ));

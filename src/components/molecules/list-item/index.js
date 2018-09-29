@@ -5,7 +5,7 @@ import { Row }  from '../../atoms/row';
 import { Col }  from '../../atoms/col';
 import {
     ButtonPrimary,
-    ButtonAlert
+    ButtonSecondary
 } from '../../atoms/buttons';
 
 import {
@@ -16,8 +16,21 @@ const ListItemWrapper = Row.extend`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* TODO: change the color to variable */
-    background: cadetblue;
+    background: ${ props => props.theme ? props.theme.background.listItem : ''} !important;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    min-height: 90px;
+
+    :hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .btn-container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: row;
+    }
 `;
 
 class ListItem extends React.Component {
@@ -53,12 +66,15 @@ class ListItem extends React.Component {
                     <ImgMini src={src} alt={alt} title={alt} />
                 </Col>
                 <Col>
+                    <ImgMini src={src} alt={alt} title={alt} />
+                </Col>
+                <Col className="btn-container">
                     <ButtonPrimary
                         onClick={ () => this.see() }
                         >{ editText }</ButtonPrimary>
-                    <ButtonAlert
+                    <ButtonSecondary
                         onClick={ () => this.edit() }
-                        >{ seeText }</ButtonAlert>
+                        >{ seeText }</ButtonSecondary>
                 </Col>
             </ListItemWrapper>
         )
