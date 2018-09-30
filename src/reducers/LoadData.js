@@ -6,7 +6,7 @@ import { GET_DATA_SUCCESS } from '../actions/LoadData'
 const DataRedux = Immutable.fromJS({
 	response: {
 		data: {
-            results: []
+      results: []
 		}
 	},
 });

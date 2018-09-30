@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { ThemeProvider  } from 'styled-components';
 
-import Header from '.';
+import { Header } from '.';
+import { ContainerFluid } from '../../atoms/container';
 
 import theme from '../../../stylus/light';
 
@@ -27,9 +28,11 @@ storiesOf('Organisms/Header', module)
     </ThemeProvider>
   )).add('without search bar', () => (
     <ThemeProvider theme={theme}>
-      <Header 
-        isLine
-        headerTitle="Title"
-        />
+      <ContainerFluid>
+        <Header 
+          isLine
+          headerTitle="Title"
+          />
+      </ContainerFluid>
     </ThemeProvider>
   ));

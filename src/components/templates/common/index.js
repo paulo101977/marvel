@@ -20,7 +20,10 @@ const TemplateCommon = (props) => {
     buttonText, 
     filterText,
     isLine,
-    hasSearch
+    hasSearch,
+    history,
+    hasEdit,
+    editText
   } = props;
 
   return ( 

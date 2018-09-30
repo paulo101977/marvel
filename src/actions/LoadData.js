@@ -10,7 +10,7 @@ export function loadData(charName){
 
     let toSearch = charName || '';
 
-    const url = charName ? `characters?name=${charName}` : `characters?`
+    const url = charName ? `characters?nameStartsWith=${charName}` : `characters?`
 
     return dispatch({
       [CHAIN_API]: [

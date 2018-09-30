@@ -52,7 +52,12 @@ class Card extends React.Component {
     }
 
     see() {
+        const { setItemSelected, item, history } = this.props;
+        if( setItemSelected && item && history) {
+            setItemSelected(item);
 
+            history.push('/detail')
+        }
     }
 
     render() {
@@ -75,7 +80,9 @@ class Card extends React.Component {
 
         return (
             <CardWrapper>
-                <Col className="card-content">
+                <Col 
+                    onClick={ () => this.see() }
+                    className="card-content">
                     <Col className="img-container">
                         <ImgResponsive src={url} alt={name} title={name} />
                     </Col>

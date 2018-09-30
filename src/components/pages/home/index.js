@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import * as LoadData from '../../../actions/LoadData';
+import * as Selection from '../../../actions/Selection';
 
 import TemplateCommon from '../../templates/common';
 import ItemsContainer from '../../organisms/items-container';
@@ -21,13 +22,15 @@ class HomePage extends React.Component {
 
     constructor(props){
         super(props);
+
+        this.loadDataOrSearch = this.loadDataOrSearch.bind(this);
     }
 
-    filterText(text) {
+    filterText(text = '') {
         this.loadDataOrSearch(text);
     }
 
-    loadDataOrSearch(text) {
+    loadDataOrSearch(text = null) {
         const { loadData } = this.props;
         if(loadData){
             loadData(text);
@@ -39,11 +42,17 @@ class HomePage extends React.Component {
     }
 
     render(){
-        const { data }  = this.props;
+        const { data, setItemSelected, history }  = this.props;
 
         return ( 
-            <TemplateCommon {...headerConfig} filterText={ (text)=> this.filterText(text) }>
-              <ItemsContainer itemsList={ data }/>
+            <TemplateCommon 
+                history={history} 
+                {...headerConfig} 
+                filterText={ (text)=> this.filterText(text) }>
+                <ItemsContainer 
+                    history={history}
+                    setItemSelected={ setItemSelected }
+                    itemsList={ data }/>
             </TemplateCommon>
         )
     }
@@ -63,7 +72,10 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(
-        LoadData,
+        { 
+            ...LoadData,
+            ...Selection,
+        },
         dispatch
     )
 }

@@ -8,10 +8,21 @@ import  Card from '../../molecules/card';
 import Description  from '../../atoms/description';
 
 const getItems = props => {
-  const { itemsList } = props;
+  const { itemsList, setItemSelected, history } = props;
 
   if( itemsList && itemsList.size > 0) {
-    return itemsList.map( (item, index) => <Card key={`card-${index}`} item={item} />)
+    return itemsList
+      .map( 
+        (item, index) => {
+          return (
+            <Card 
+              history={ history }
+              key={`card-${index}`} 
+              setItemSelected={setItemSelected}
+              item={item} />
+            )
+          }
+        );
   }
   else {
     return renderEmpty();
