@@ -51,11 +51,22 @@ const LabelWrapper = Label.extend`
 
 `
 
+const changed = (e, props) => {
+
+    const { onChange } = props;
+
+    if(onChange){
+        const { checked } = e.target;
+
+        onChange(checked);
+    }
+}
+
 const Toggle = props => {
 
     return (
         <LabelWrapper>
-            <Input type="checkbox" />
+            <Input type="checkbox" onChange={ (e) => changed(e, props) }/>
             <Span className="slider"></Span>
         </LabelWrapper>
     )

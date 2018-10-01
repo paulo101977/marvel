@@ -10,6 +10,9 @@ import InputArea from '../../molecules/input-area';
 import Toggle from '../../molecules/toggle';
 import { ButtonSecondary } from '../../atoms/buttons';
 
+import light from '../../../stylus/light';
+import dark from '../../../stylus/dark';
+
 const ContainerFluidWrapper = ContainerFluid.extend`
   background-color: ${ props => props.theme ? props.theme.background.header: '' }
 
@@ -71,6 +74,16 @@ const goToEdit = props => {
   }
 }
 
+const changeTheme = (value, updateTheme) => {
+  if(updateTheme){
+    if(value){
+      updateTheme(dark);
+    } else {
+      updateTheme(light);
+    }
+  }
+}
+
 const Header = (props) => {
   const { 
     headerTitle,
@@ -82,7 +95,8 @@ const Header = (props) => {
     isLine,
     hasSearch,
     hasEdit,
-    editText
+    editText,
+    updateTheme
   } = props;
 
   return ( 
@@ -113,7 +127,7 @@ const Header = (props) => {
         </Col> : null
       }
       <Col className="toggle-ctn">
-        <Toggle />
+        <Toggle onChange={ (value) => { changeTheme(value, updateTheme )}}/>
       </Col>
     </Row>
   </ContainerFluidWrapper>)

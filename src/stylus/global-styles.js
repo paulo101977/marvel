@@ -26,7 +26,10 @@ export default injectGlobal`
     }
 
     html, body {
+        background-color: #fafafa;
+        color: white;
         font-family: Lucida, sans-serif !important;
+        transition: background-color 1s, color 1s;
     }
 
     #outlet{

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import styled from 'styled-components';
 
 import { ContainerFluid, Container } from '../../atoms/container';
 import { Header } from '../../organisms/header';
@@ -23,12 +22,13 @@ const TemplateCommon = (props) => {
     hasSearch,
     history,
     hasEdit,
-    editText
+    editText,
+    updateTheme
   } = props;
 
   return ( 
   <ContainerFluidWrapper>
-    <Header {...props} />
+    <Header {...props} updateTheme={updateTheme}/>
     <Container>
         { props.children }
     </Container>

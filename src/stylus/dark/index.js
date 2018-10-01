@@ -3,12 +3,12 @@ export default {
         fontColor: '#FFFFFF'
     },
     colors: {
-        primary: '#7e57c2',
+        primary: '#311B92',
         secondary: '#FFFFFF'
     },
     toggle: {
-        light: '#b085f5',
-        dark: '#4d2c91'
+        light: '#6746C3',
+        dark: '#000063'
     },
     button: {
         colors: {
@@ -16,15 +16,15 @@ export default {
             secondary: '#FFFFFF'
         },
         bg: {
-            light: '#7e57c2',
-            dark: '#4d2c91'
+            light: '#311B92',
+            dark: '#000063'
         }
     },
     background: {
-        header: '#7e57c2',
-        footer: '#7e57c2',
+        header: '#311B92',
+        footer: '#311B92',
         content: '#FFFFFF',
-        listItem: '#b085f5',
-        scroll: '#7e57c2'
+        listItem: '#6746C3',
+        scroll: '#311B92'
     }
 }

@@ -6,13 +6,13 @@ import * as Selection from '../../../actions/Selection';
 
 import TemplateCommon from '../../templates/common';
 
-import DetailContainer from '../../organisms/detail-container';
+import EditContainer from '../../organisms/edit-container';
 
 const headerConfig = {
     hasSearch: false
 }
 
-class DetailPage extends React.Component {
+class EditPage extends React.Component {
 
     constructor(props){
         super(props);
@@ -30,7 +30,7 @@ class DetailPage extends React.Component {
 
 
     render(){
-        const { selectedItem, history, updateTheme }  = this.props;
+        const { selectedItem, setItemSelected, editSelected, history, updateTheme }  = this.props;
 
         let headerTitle = '';
 
@@ -43,13 +43,14 @@ class DetailPage extends React.Component {
         return ( 
             <TemplateCommon 
                 {...headerConfig} 
-                hasEdit={true}
-                editText="Edit Character"
-                updateTheme={updateTheme}
                 headerTitle={ headerTitle } 
+                updateTheme={updateTheme}
                 history={history}>
-                <DetailContainer 
+                <EditContainer 
+                    editSelected={ editSelected }
+                    history={history}
                     selectedItem={selectedItem}
+                    setItemSelected={ setItemSelected }
                 />
             </TemplateCommon>
         )
@@ -74,5 +75,5 @@ function mapDispatchToProps(dispatch) {
 }
 
   
-export default connect(mapStateToProps, mapDispatchToProps)(DetailPage)
-export { DetailPage };
+export default connect(mapStateToProps, mapDispatchToProps)(EditPage)
+export { EditPage };
