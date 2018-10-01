@@ -1,27 +1,6 @@
 {
     "presets": [
         "react",
-        "env",
-        "stage-1"
-    ],
-    "ignore": [
-        "node_modules",
-        "assets",
-        "view",
-        "public",
-        "test",
-        "spec",
-        "logs",
-        "lib/jasmine_examples",
-        "db",
-        "configTests"
-    ],
-    "env": {
-        "test": {
-          "plugins":
-          [
-            "babel-plugin-rewire"
-          ]
-        }
-      }
+        "env"
+    ]
 }

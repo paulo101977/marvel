@@ -1,14 +1,13 @@
 
 //import your store
-import configureStore from '../../app/store/configureStore';
+import configureStore from '../../src/store/configureStore';
 
 //import your action
-import * as LoadDataAction from '../../app/actions/LoadData';
+import * as LoadDataAction from '../../src/actions/LoadData';
 
 
-import request from 'superagent';
 import nock from 'nock';
-import immutable, { Map } from 'immutable'
+import  { Map } from 'immutable'
 
 let store = null, scope;
 
@@ -22,25 +21,7 @@ const callerOne = () =>{
 const data = {
 	response: {
 		data: {
-			longSynopsis: '',
-	    title: '',
-	    rating: '',
-	    primaryGenre: '',
-			children: [{
-					children: [
-						{
-							title: '',
-							mediumSynopsis: '',
-							furnitureBaseUrl: '',
-							furniture: [
-								{uri: '/my.png'},
-								{uri: ''},
-								{uri: ''},
-								{uri: '/my2.png'}
-							]
-						}
-					]
-			}]
+      results: []
 		}
 	},
 }
@@ -60,10 +41,6 @@ describe('LoadData', () => {
     store = configureStore({});
   })
 
-  afterEach( () => {
-
-  })
-
   it('should load data from action', done =>{
 
     // dispath the action
@@ -72,7 +49,7 @@ describe('LoadData', () => {
     )
     // and ..., receive the mocked response
     .then(() => {
-      expect(store.getState().LoadData.toJS().response).toEqual(data)
+      expect(store.getState().LoadData.toJS()).toEqual(data)
       done();
     })
 
