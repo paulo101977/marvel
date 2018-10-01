@@ -1,5 +1,6 @@
 export const LOADDING_ON = Symbol('LOADDING_ON') 
 export const LOADDING_OFF = Symbol('LOADDING_OFF') 
+export const UPDATE_THEME = Symbol('UPDATE_THEME') 
 
 export function loaddingON() {
   return {
@@ -9,5 +10,12 @@ export function loaddingON() {
 export function loaddingOFF() {
   return {
     type: LOADDING_OFF 
+  }
+}
+
+export function updateTheme(theme) {
+  return {
+    type: UPDATE_THEME,
+    theme 
   }
 }

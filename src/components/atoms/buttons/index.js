@@ -2,20 +2,21 @@ import React from  'react';
 import styled from  'styled-components';
 
 const Button = styled.button.attrs({className: 'btn'})`
-    ${props => `color: ${props.theme.main} !important`}
-    ${props => props.isFull ? `width: 100%` : ''  }
+    width: ${props => props.isFull ? `100%` : ''  };
+    color: ${ props => props.theme && props.theme.button ? props.theme.button.colors.primary : ''} !important;
 `;
 
-const ButtonPrimary = props => <Button {...props} className="btn-primary"></Button>;
-const ButtonDanger = props => <Button {...props} className="btn-danger"></Button>;
-const ButtonAlert = props => <Button {...props} className="btn-warning"></Button>;
-const ButtonSuccess = props => <Button {...props} className="btn-success"></Button>;
+const ButtonPrimary = Button.extend`
+    background: ${ props => props.theme && props.theme.button ? props.theme.button.bg.light : ''} !important;
+`;
+const ButtonSecondary = Button.extend`
+    background: ${ props => props.theme && props.theme.button ? props.theme.button.bg.dark : ''} !important;
+`;
+
 
 export default Button;
 export { 
     Button, 
     ButtonPrimary, 
-    ButtonDanger, 
-    ButtonAlert, 
-    ButtonSuccess 
+    ButtonSecondary
 };
