@@ -42,7 +42,8 @@ const CardWrapper = styled(Col3)`
 
     & h4{
         color: ${ props => props.theme && props.theme.colors ? props.theme.colors.primary : 'black'} !important;
-        font-size: 1rem;
+        font-size: .8rem;
+        margin-top: .5rem;
     }
 
 `;

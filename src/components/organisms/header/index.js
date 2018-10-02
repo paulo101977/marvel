@@ -16,6 +16,7 @@ import dark from '../../../stylus/dark';
 
 const ContainerFluidWrapper = styled(ContainerFluid)`
   background-color: ${ props => props.theme ? props.theme.background.header: '' }
+  min-width: 100vw;  
 
   .row{
     display: flex;
