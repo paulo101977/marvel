@@ -1,4 +1,4 @@
-import superAgent from 'superagent';
+import * as superAgent from 'superagent';
 import Promise from 'bluebird';
 import isFunction from 'lodash.isfunction';
 import { camelizeKeys } from 'humps';
@@ -52,6 +52,7 @@ function createRequestPromise(apiActionCreator, next, getState, dispatch) {
 
     return new Promise((resolve, reject) => {
       superAgent[params.method](params.url)
+        .withCredentials()
         .send(params.body)
         .query(params.query)
         .set(header)
