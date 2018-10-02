@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styled from 'styled-components';
 
 import { Container } from '../../atoms/container';
 import { Row } from '../../atoms/row';
@@ -36,7 +36,7 @@ const renderEmpty = () => (
 )
 
 
-const ItemsContainerWrapper = Row.extend`
+const ItemsContainerWrapper = styled(Row)`
   .container-empty{
     text-align: center;
     border-radius: 4px;

@@ -14,7 +14,6 @@ import * as AppAction from '../actions';
 const AppRouter = (props) => {
   const { themeSelected, updateTheme } = props;
 
-  console.log('appRouter', updateTheme)
   return (
     <ThemeProvider theme={themeSelected}>
       <BrowserRouter>

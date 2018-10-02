@@ -1,11 +1,10 @@
 
-import React from  'react';
 import styled from  'styled-components';
 
 const Img = styled.img``;
-const ImgResponsive = Img.extend.attrs({className: 'img-fluid'})``;
-const ImgThumb = Img.extend.attrs({className: 'img-thumbnail'})``;
-const ImgMini = Img.extend`
+const ImgResponsive = styled(Img).attrs({className: 'img-fluid'})``;
+const ImgThumb = styled(Img).attrs({className: 'img-thumbnail'})``;
+const ImgMini = styled(Img)`
     width: auto;
     max-height: 60px;
 `;

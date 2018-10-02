@@ -44,8 +44,6 @@ class HomePage extends React.Component {
     render(){
         const { data, setItemSelected, history, updateTheme }  = this.props;
 
-        console.log('props', this.props)
-
         return ( 
             <TemplateCommon 
                 history={history} 

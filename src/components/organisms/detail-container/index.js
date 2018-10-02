@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+import styled from 'styled-components';
 import { Row } from '../../atoms/row';
 import { Col, Col12, Col6 } from '../../atoms/col';
 import { ImgResponsive } from '../../atoms/img';
@@ -37,7 +37,7 @@ const renderComics = (comics) => {
   return null;
 }
 
-const DetailContainerWrapper = Row.extend`
+const DetailContainerWrapper = styled(Row)`
   h5{
     font-weight: bolder;
   }

@@ -1,11 +1,11 @@
 
 import React from 'react';
-
+import styled from 'styled-components';
 import Label from '../../atoms/label';
 import Input from '../../atoms/input';
 import Span from '../../atoms/span';
 
-const LabelWrapper = Label.extend`
+const LabelWrapper = styled(Label)`
   position: relative;
   display: inline-block;
   width: 60px;

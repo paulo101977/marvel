@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { ContainerFluid } from '../../atoms/container';
 import Row from '../../atoms/row';
@@ -13,7 +14,7 @@ import { ButtonSecondary } from '../../atoms/buttons';
 import light from '../../../stylus/light';
 import dark from '../../../stylus/dark';
 
-const ContainerFluidWrapper = ContainerFluid.extend`
+const ContainerFluidWrapper = styled(ContainerFluid)`
   background-color: ${ props => props.theme ? props.theme.background.header: '' }
 
   .row{

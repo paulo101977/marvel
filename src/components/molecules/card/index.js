@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styled from 'styled-components';
 
 import { Col, Col3 }  from '../../atoms/col';
 import {
@@ -10,7 +10,7 @@ import {
     ImgResponsive
 } from '../../atoms/img';
 
-const CardWrapper = Col3.extend`
+const CardWrapper = styled(Col3)`
     .card-content{
         display: flex;
         justify-content: space-between;
@@ -42,15 +42,12 @@ const CardWrapper = Col3.extend`
 
     & h4{
         color: ${ props => props.theme && props.theme.colors ? props.theme.colors.primary : 'black'} !important;
+        font-size: 1rem;
     }
 
 `;
 
 class Card extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     see() {
         const { setItemSelected, item, history } = this.props;
         if( setItemSelected && item && history) {

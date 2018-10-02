@@ -5,10 +5,7 @@ export const GET_DATA_FAIL = Symbol('GET_DATA_FAIL')
 
 
 export function loadData(charName){
-  return (dispatch, getState) => {
-    //const Data = getState().Data
-
-    let toSearch = charName || '';
+  return (dispatch) => {
 
     const url = charName ? `characters?nameStartsWith=${charName}` : `characters?`
 

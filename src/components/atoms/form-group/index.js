@@ -1,4 +1,4 @@
-import React from  'react';
+
 import styled from  'styled-components';
 
 const FormGroup = styled.div.attrs({className: 'form-group'})``;

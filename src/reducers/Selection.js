@@ -54,6 +54,8 @@ const searchByNewFieldsAndEdit = (currentField = [], nFields) => {
           value: value
         })
       }
+
+      return field;
     })
 
     return currentField || [];
@@ -101,6 +103,7 @@ function appReducer (state = defaultSelected, action) {
       })
     case EDIT_DATA_SELECTION:
       saveOrEditItem(action);
+      return state;
     default: 
       return state
   }

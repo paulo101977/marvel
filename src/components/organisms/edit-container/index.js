@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styled from 'styled-components';
 
 import { Form } from '../../atoms/form';
 import { Row } from '../../atoms/row';
@@ -15,7 +15,7 @@ const getColor = (props) => {
   return props.theme && props.theme.colors ? props.theme.colors.primary : 'white';
 }
 
-const EditContainerWrapper = Form.extend`
+const EditContainerWrapper = styled(Form)`
   h5{
     font-weight: bolder;
   }
@@ -149,13 +149,14 @@ class EditContainer extends React.Component{
       if(item && items[item.key]){
         items[item.key].name = item.value;
       }
+
+      return item;
     })
   }
 
   updateCurrent(selectedItem) {
     const { setItemSelected } = this.props;
     const { fields, description } = this.state;
-    let temp = {}
     let clone = {}
 
     if(selectedItem) {

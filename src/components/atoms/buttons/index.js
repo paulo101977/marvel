@@ -1,4 +1,3 @@
-import React from  'react';
 import styled from  'styled-components';
 
 const Button = styled.button.attrs({className: 'btn'})`
@@ -6,10 +5,10 @@ const Button = styled.button.attrs({className: 'btn'})`
     color: ${ props => props.theme && props.theme.button ? props.theme.button.colors.primary : ''} !important;
 `;
 
-const ButtonPrimary = Button.extend`
+const ButtonPrimary = styled(Button)`
     background: ${ props => props.theme && props.theme.button ? props.theme.button.bg.light : ''} !important;
 `;
-const ButtonSecondary = Button.extend`
+const ButtonSecondary = styled(Button)`
     background: ${ props => props.theme && props.theme.button ? props.theme.button.bg.dark : ''} !important;
 `;
 

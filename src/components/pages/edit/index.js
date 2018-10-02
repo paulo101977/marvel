@@ -34,7 +34,7 @@ class EditPage extends React.Component {
 
         let headerTitle = '';
 
-        if( selectedItem && typeof selectedItem === 'object'){
+        if( selectedItem && typeof selectedItem === 'object' && selectedItem.get("id")){
             headerTitle = selectedItem.get('name');
         } else {
             this.goBack();

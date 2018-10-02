@@ -1,13 +1,12 @@
 import React from 'react';
 
 import styled from 'styled-components';
-
 import Label from '../../atoms/label';
 import FormGroup from '../../atoms/form-group';
 import Input from '../../atoms/input';
 import { ButtonSecondary } from '../../atoms/buttons';
 
-const InputAreaWrapper = FormGroup.extend`
+const InputAreaWrapper = styled(FormGroup)`
     display: flex;
     flex-direction: column;
 

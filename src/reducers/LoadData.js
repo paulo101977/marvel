@@ -30,7 +30,9 @@ const retrieveComics = (comics, fields) => {
 			const comicItem = comics.items[item.key];
 			if(comicItem){
 				comicItem.name = item.value;
-			}
+      }
+      
+      return item;
 		})
 	}
 
@@ -62,7 +64,9 @@ const mergeWithLocalStorage = (response) => {
 
 					finded.description = item.description;
 					finded.comics = retrieveComics(comics, item.fields)
-				}
+        }
+        
+        return item;
 			});
 		}
 
