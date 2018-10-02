@@ -1,7 +1,8 @@
 ### Como rodar o projeto:
 - rodar ```npm i``` para instalar as dependências
-- após, rodar npm start
-- para rodar o storybook, rodar npm run storybook
+- após, rodar ```npm start```
+- para rodar o storybook, use ```npm run storybook```
+- para rodas os testes: ```npm run test``` ou ```npm run test:watch```
 
 #### Tecnologias empregadas:
 
