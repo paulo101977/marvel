@@ -48,11 +48,11 @@ function createRequestPromise(apiActionCreator, next, getState, dispatch) {
   return (prevBody) => {
     const apiAction = apiActionCreator(prevBody);
     const params = extractParams(apiAction[CALL_API]);
-    const header = params.header || {'api-key': 'user-unlogged'};
+    const header = params.header || {};
 
     return new Promise((resolve, reject) => {
+      try {
       superAgent[params.method](params.url)
-        .withCredentials()
         .send(params.body)
         .query(params.query)
         .set(header)
@@ -84,6 +84,9 @@ function createRequestPromise(apiActionCreator, next, getState, dispatch) {
             resolve(resBody);
           }
         });
+      } catch(e) {
+        console.log('error', e)
+      }
     });
   };
 }
