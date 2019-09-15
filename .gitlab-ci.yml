@@ -4,6 +4,7 @@
         - install
         - build
         - test
+        - deploy
 
     cache:
         paths:
@@ -24,6 +25,15 @@
             - npm run build
 
 
-    testing_testing:
+    run_test:
         stage: test
         script: npm run test
+
+    run_deploy:
+        stage: deploy
+        script:
+            - rm -rf public
+            - mv build public
+        artifacts:
+          paths:
+            - public # mandatory, other folder won't work
