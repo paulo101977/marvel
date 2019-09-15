@@ -1,15 +1,16 @@
     image: node:latest
 
+    variables:
+        PUBLIC_URL: /marvel
+
     stages:
         - install
-        - build
         - test
         - deploy
 
     cache:
         paths:
             - node_modules/
-            - build/
 
 
     install_dependencies:
@@ -20,14 +21,6 @@
             paths:
                 - node_modules/
 
-    run_build:
-        stage: build
-        script:
-            - npm run build
-        artifacts:
-            paths:
-                - build/
-
 
     run_test:
         stage: test
@@ -36,9 +29,12 @@
     run_deploy:
         stage: deploy
         script:
+            - npm run build
             - rm -rf public
+            - rm -rf node_modules
             - mv build public
-            - ls -lha public
         artifacts:
           paths:
             - public # mandatory, other folder won't work
+        only:
+            - master # Only run on master branch
