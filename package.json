@@ -1,7 +1,7 @@
 {
   "name": "marvel",
   "homepage": "https://paulo10.1977.gitlab.io/marvel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "bluebird": "^3.5.2",
