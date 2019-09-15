@@ -9,6 +9,7 @@
     cache:
         paths:
             - node_modules/
+            - build/
 
 
     install_dependencies:
@@ -23,6 +24,9 @@
         stage: build
         script:
             - npm run build
+        artifacts:
+            paths:
+                - build/
 
 
     run_test:
