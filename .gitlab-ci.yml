@@ -33,6 +33,8 @@
         stage: deploy
         script:
             - rm -rf public
+            - pwd
+            - ls
             - mv build public
         artifacts:
           paths:
