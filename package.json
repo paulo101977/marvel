@@ -1,5 +1,6 @@
 {
   "name": "marvel",
+  "homepage": "https://paulo10.1977.gitlab.io/marvel",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
